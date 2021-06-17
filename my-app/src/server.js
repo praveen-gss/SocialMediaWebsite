@@ -5,7 +5,7 @@ var cors = require('cors');
 app.use(cors());
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-    cb(null, 'public')
+    cb(null, 'public/User')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -27,6 +27,6 @@ app.post('/upload',function(req, res) {
 });
 app.listen(3000, function() {
 
-    console.log('App running on port 8000');
+    console.log('App running on port 3000');
 
 });
