@@ -54,6 +54,7 @@ export default function NewsFeed() {
                         </div>
                     </div>
                 </div>
+                <br></br>
                 {jsxFiles}
             </div>
         </div>
