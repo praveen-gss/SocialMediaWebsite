@@ -5,20 +5,26 @@ import reportWebVitals from './reportWebVitals';
 import RegistrationPage from './RegistrationPage'
 import LoginPage from './LoginPage'
 import NewsFeed from './NewsFeed';
-import { isRegistration, isLogin, isNewsFeed } from './RegisterLoginHandler';
-
-var display = (<h1>default</h1>);
-if (isRegistration)
-  display = (<RegistrationPage />)
-if (isLogin)
-  display = (<LoginPage />)
-if (isNewsFeed)
-  display = (<NewsFeed />)
+import Chat from './Chat';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 ReactDOM.render(
-  <React.StrictMode>
-    {display}
-  </React.StrictMode>,
+  <Router>
+    <Switch>
+      <Route exact path = "/">
+        <LoginPage />
+      </Route>
+      <Route exact path = "/RegistrationPage">
+        <RegistrationPage />
+      </Route>
+      <Route exact path = "/NewsFeed">
+        <NewsFeed />
+      </Route>
+      <Route exact path = "/Chat">
+        <Chat />
+      </Route>
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 

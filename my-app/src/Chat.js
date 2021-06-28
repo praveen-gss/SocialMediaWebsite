@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 export default function NewsFeed() {
     const styles = {
@@ -12,40 +11,6 @@ export default function NewsFeed() {
         justifyContent: 'center',
         alignItems: 'center'
     }
-
-    var files = ["/User/1.png","/User/2.png","/User/3.png","/User/4.png","/User/5.png"]
-    var jsxFiles = files.map((file) => {
-        return (
-        <div>
-            <br></br>
-            <div class="card" style={{width: '40rem'}}>
-                <img src={process.env.PUBLIC_URL+file} class="card-img-top" />
-                <div class="card-body">
-                    <p class="card-title"><strong>UserName</strong></p>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary">Like</button>
-                </div>
-            </div>
-        </div>
-        )
-    });
-
-    const [selectedFile, setSelectedFile] = useState(null);
-
-    var onChangeHandler = (e) => {
-        setSelectedFile(e.target.files[0]);
-    };
-
-    var onClickHandler = () => {
-        const data = new FormData()
-        data.append('file', selectedFile)
-        axios.post("http://localhost:3000/upload", data, { 
-            // receive two    parameter endpoint url ,form data
-        })
-        .then(res => { // then print response status
-            console.log(res.statusText)
-        })
-    };
 
     return (
         <div>
@@ -68,7 +33,7 @@ export default function NewsFeed() {
                                 <a class="nav-link" href="/Chat">Chat</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Profile
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -84,19 +49,16 @@ export default function NewsFeed() {
                     </div>
                 </nav>
             </div>
-            <div style={articleStyle}>
-            <br></br>
-                <div class="card" style={{width: '40rem'}}>
-                    <div class="input-group">
-                        <span class="input-group-text">Write Something...</span><br></br><br></br>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
+            <div style={{marginLeft: "405px"}} class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div style={{border:"1px solid rgba(39,41,43,0.1)", justifyContent:"center"}} class="row">UserName</div>
+                        <div style={{border:"1px solid rgba(39,41,43,0.1)", justifyContent:"center"}} class="row">ChatList</div>
                     </div>
-                    <div class="input-group">
-                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" onChange={onChangeHandler}/>
-                        <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04" onClick={onClickHandler}>Upload</button>
+                    <div style={{border:"1px solid rgba(39,41,43,0.1)", justifyContent:"center"}} class="col-6">
+                        Chat Space
                     </div>
                 </div>
-                {jsxFiles}
             </div>
         </div>
     );
