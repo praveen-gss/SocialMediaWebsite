@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import RegistrationPage from './RegistrationPage'
-import LoginPage from './LoginPage'
-import NewsFeed from './NewsFeed';
-import Chat from './Chat';
+import RegistrationPage from './Components/RegistrationPage'
+import LoginPage from './Components/LoginPage'
+import NewsFeed from './Components/NewsFeed';
+import Chat from './Components/Chat';
+import UserProfile from './Components/UserProfile';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 ReactDOM.render(
@@ -22,6 +23,9 @@ ReactDOM.render(
       </Route>
       <Route exact path = "/Chat">
         <Chat />
+      </Route>
+      <Route exact path = "/UserProfile">
+        <UserProfile />
       </Route>
     </Switch>
   </Router>,
