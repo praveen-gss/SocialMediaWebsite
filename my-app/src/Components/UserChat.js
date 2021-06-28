@@ -43,8 +43,8 @@ export default function UserChat() {
             <div class="container">
                 <div style={{justifyContent:"center"}} class="row">
                     <div class="col-4">
-                        <div style={{height:"40px", border:"1px solid rgba(39,41,43,0.1)", justifyContent:"center", alignContent:"center"}} class="row">UserName</div>
-                        <div style={{overflowY: "auto", height:"780px", border:"1px solid rgba(39,41,43,0.1)", alignContent:"flex-start"}} class="row">
+                        <div style={{height:"60px", border:"1px solid rgba(39,41,43,0.1)", justifyContent:"center", alignContent:"center"}} class="row">UserName</div>
+                        <div style={{overflowY: "auto", height:"750px", border:"1px solid rgba(39,41,43,0.1)", alignContent:"flex-start"}} class="row">
                             <div>
                                 <br></br>
                                 <a style={{textDecoration: "none"}} href="/UserChat">
@@ -66,9 +66,21 @@ export default function UserChat() {
                             {chatList}
                         </div>
                     </div>
-                    <div style={{border:"1px solid rgba(39,41,43,0.1)", justifyContent:"center", alignContent: "center"}} class="col-6">
-                        <div style={{height: "100%", justifyContent:"center", alignContent: "center"}} class="row">
-                            Your Meassages
+                    <div style={{border:"1px solid rgba(39,41,43,0.1)", justifyContent:"center"}} class="col-6">
+                        <div style={{height:"60px", border:"1px solid rgba(39,41,43,0.1)", justifyContent: "center", alignContent:"center"}} class="row">
+                            <div class="col-2">
+                                <img style = {{marginLeft: "50px", width: "25px", height: "25px", borderRadius: "50%"}} src="https://picsum.photos/25/25" />
+                            </div>
+                            <div class="col-8">
+                                FriendName
+                            </div>
+                        </div>
+                        <div style={{height:"700px", justifyContent:"center", alignContent:"center"}} class="row">ChatDisplay</div>
+                        <div style={{height:"50px", justifyContent:"center", alignContent:"center"}} class="row">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Type your message..." aria-label="Recipient's username" aria-describedby="button-addon2" />
+                                <button class="btn btn-outline-primary" type="button" id="button-addon2">Send</button>
+                            </div>
                         </div>
                     </div>
                 </div>
